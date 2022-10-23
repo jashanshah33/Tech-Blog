@@ -16,7 +16,7 @@ function PostDetail() {
         //  console.log(snapShot.data());
         setPost(snapShot.data());
       });
-  }, []);
+  }, [postId]);
 
   return (
     <div style={styles.PostDetail}>

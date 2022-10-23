@@ -93,10 +93,9 @@ console.log(posts);
     );
   }
   
-  const style={
-    heading:{
-      marginTop:50,
-      fontSize:50
-    }
-  }
+  //   heading:{
+  //     marginTop:50,
+  //     fontSize:50
+  //   }
+  // }
   export default Home

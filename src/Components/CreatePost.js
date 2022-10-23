@@ -1,8 +1,9 @@
 import { firestore } from "../firebase";
 import { usePosts } from "../hooks";
-import React from "react";
+import React, { useState } from "react";
 // import css from './button.module.css';
 import styled, { css } from "styled-components";
+import { Redirect } from "react-router-dom";
 
 const ButtonStyles = styled.button`
   height: 33px;
@@ -26,6 +27,7 @@ function CreatePost() {
   const title = usePosts("");
   const subTitle = usePosts("");
   const content = usePosts("");
+  const [posted, setPosted]= useState(false)
 
   function reset() {
     title.setValue("");
@@ -49,8 +51,12 @@ function CreatePost() {
 
     alert("Post Added");
     reset();
+    setPosted(true)
   };
-
+  
+if (posted) {
+  return <Redirect to={'/'} />
+}
   return (
     <div className="create-post">
       <h1>Create Post</h1>
